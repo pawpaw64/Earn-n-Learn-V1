@@ -30,3 +30,9 @@ This project is built with:
 - Tailwind CSS
 - Mysql
 
+Our platform boosts campus productivity by offering project management tools and seamless communication and campus hub — all within one system!
+
+## 🎥 Demo Video
+
+[![Watch the video](https://img.youtube.com/vi/jBf_TcsDPIE/0.jpg)](https://youtu.be/jBf_TcsDPIE)
+
