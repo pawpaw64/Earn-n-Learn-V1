@@ -1,6 +1,21 @@
 # Earn-n-Learn
 
 > A full-stack campus productivity platform that empowers students to earn income, share skills, trade materials, collaborate on projects, and connect with peers — all within one unified ecosystem.
+>
+---
+**Project:** Earn-N-Learn 
+
+**Institution:** United International University — Department of CSE 
+
+**Course:** CSE 3412 — Database Managment System
+
+**Group:** Team LongBLOB 
+
+**Authors:** Tabassum Sumaiya · Md. Hasibul Hossain · Moumita Borna 
+
+
+
+This repository contains the development resources for the EarnNLearn project 
 
 ## 🎥 Demo Video
 
@@ -13,12 +28,10 @@
 1. [Project Overview](#-project-overview)
 2. [Key Features](#-key-features)
 3. [Technology Stack](#-technology-stack)
-4. [Project Structure](#-project-structure)
-5. [Setup Instructions](#-setup-instructions)
-6. [API Endpoints](#-api-endpoints)
-7. [Database Schema](#-database-schema)
-8. [Contributing](#-contributing)
-9. [License & Acknowledgments](#-license--acknowledgments)
+4. [Setup Instructions](#-setup-instructions)
+5. [Database Schema](#-database-schema)
+6. [Contributing](#-contributing)
+7. [License & Acknowledgments](#-license--acknowledgments)
 
 ---
 
@@ -72,17 +85,12 @@ The platform also features a real-time chat system (direct messages and group ch
 | **React 18** | Component-based UI framework for building a dynamic single-page application |
 | **TypeScript** | Static typing for safer, more maintainable frontend code |
 | **Vite** | Lightning-fast development server and optimised production build tool |
-| **React Router v6** | Client-side routing for the multi-page dashboard experience |
 | **Tailwind CSS** | Utility-first CSS framework for rapid, consistent styling |
 | **shadcn/ui + Radix UI** | Accessible, unstyled component primitives with ready-to-use shadcn wrappers |
-| **TanStack Query (React Query)** | Server-state management, caching, and background data refetching |
-| **React Hook Form + Zod** | Performant form handling with schema-based validation |
-| **Recharts** | Declarative charting library for financial graphs in the Wallet dashboard |
 | **Socket.IO Client** | Real-time bidirectional communication for the messaging system |
 | **Axios** | HTTP client for all REST API calls |
-| **date-fns** | Lightweight date utility library |
 | **Lucide React** | Icon set consistent with the shadcn design system |
-| **Sonner** | Toast notification library |
+
 
 ### Backend
 
@@ -94,8 +102,6 @@ The platform also features a real-time chat system (direct messages and group ch
 | **MySQL 2** | Relational database driver with promise support |
 | **bcryptjs** | Password hashing for secure credential storage |
 | **JSON Web Tokens (JWT)** | Stateless authentication via bearer tokens |
-| **Multer** | Multipart file upload handling for avatars, resumes, and chat attachments |
-| **dotenv** | Environment variable management |
 | **CORS** | Cross-origin resource sharing configuration |
 
 ### Database
@@ -106,107 +112,7 @@ The platform also features a real-time chat system (direct messages and group ch
 
 ---
 
-## 📁 Project Structure
 
-```
-Earn-n-Learn-V1/
-├── server.js                        # Entry point — starts frontend dev server + backend concurrently
-├── index.html                       # Vite HTML shell
-├── package.json
-├── vite.config.ts
-├── tailwind.config.ts
-├── tsconfig.json
-├── .env                             # Environment variables (DB credentials, JWT secret, port)
-├── uploads/                         # Runtime file uploads (avatars, resumes, message attachments)
-│
-└── src/
-    ├── main.tsx                     # React app entry point
-    ├── App.tsx                      # Root component with router and providers
-    ├── index.css / App.css          # Global styles
-    │
-    ├── layouts/
-    │   └── DashboardLayout.tsx      # Shared sidebar + header shell for all dashboard pages
-    │
-    ├── contexts/
-    │   └── SocketContext.tsx        # React context providing Socket.IO client to the component tree
-    │
-    ├── pages/
-    │   ├── Index.tsx                # Landing / marketing page
-    │   ├── NotFound.tsx             # 404 page
-    │   └── dashboard/
-    │       ├── Browse.tsx           # Browse jobs, skills, and materials marketplace
-    │       ├── Calendar.tsx         # Calendar view for deadlines and milestones
-    │       ├── Campus.tsx           # Campus Hub (discussions, polls, announcements)
-    │       ├── Leaderboard.tsx      # Student contribution leaderboard
-    │       ├── Messages.tsx         # Real-time direct and group messaging
-    │       ├── MyWork.tsx           # Personal work dashboard (active projects, invoices)
-    │       ├── Profile.tsx          # User profile and portfolio editor
-    │       ├── Settings.tsx         # Account settings
-    │       └── Wallet.tsx           # Wallet, transactions, escrow, savings goals
-    │
-    ├── components/
-    │   ├── Header.tsx               # Top navigation bar
-    │   ├── AuthModal.tsx            # Login / register modal
-    │   ├── JobCard.tsx              # Job listing display card
-    │   ├── JobPostCard.tsx          # Job posting form card
-    │   ├── SkillCard.tsx            # Skill listing display card
-    │   ├── SkillPostCard.tsx        # Skill posting form card
-    │   ├── MaterialCard.tsx         # Material listing display card
-    │   ├── MaterialPostCard.tsx     # Material posting form card
-    │   ├── DatabaseConnectionTest.tsx
-    │   ├── browse/                  # Browse page sub-components
-    │   ├── campus/                  # Campus Hub sub-components
-    │   ├── dashboard/               # Dashboard widget components
-    │   ├── forms/                   # Reusable form components
-    │   ├── messages/                # Chat UI components
-    │   ├── modals/                  # Modal dialogs
-    │   ├── mywork/                  # My Work section components
-    │   ├── projects/                # Project management components
-    │   ├── ui/                      # shadcn/ui primitives (auto-generated)
-    │   └── wallet/                  # Wallet sub-components
-    │
-    ├── hooks/                       # Custom React hooks
-    ├── services/                    # API service layer (Axios calls)
-    ├── types/                       # Shared TypeScript type definitions
-    └── lib/                         # Utility functions (e.g., cn() for class merging)
-    │
-    └── server/                      # Express backend (runs as a Node.js module)
-        ├── index.js                 # Express app setup, Socket.IO, middleware, route registration
-        ├── config/                  # Database connection pool configuration
-        ├── middleware/
-        │   └── authMiddleware.js    # JWT verification middleware
-        ├── controllers/             # Route handler logic (one file per resource)
-        ├── models/                  # Database query helpers / data access layer
-        ├── routes/                  # Express Router definitions (one file per resource)
-        │   ├── userRoutes.js
-        │   ├── jobRoutes.js
-        │   ├── applicationRoutes.js
-        │   ├── skillRoutes.js
-        │   ├── materialRoutes.js
-        │   ├── contactRoutes.js
-        │   ├── workRoutes.js
-        │   ├── invoiceRoutes.js
-        │   ├── notificationRoutes.js
-        │   ├── walletRoutes.js
-        │   ├── messageRoutes.js
-        │   ├── projectRoutes.js
-        │   ├── projectTaskRoutes.js
-        │   ├── projectResourceRoutes.js
-        │   ├── projectTimeRoutes.js
-        │   ├── projectCommentRoutes.js
-        │   └── campusRoutes.js
-        └── database/
-            ├── initDb.js                    # Auto-runs all schema files on startup
-            ├── schema.sql                   # Core tables (users, jobs, skills, materials, etc.)
-            ├── wallet_schema.sql            # Wallet, transactions, escrow tables
-            ├── project_schema.sql           # Projects and milestones tables
-            ├── project_enhanced_schema.sql  # Tasks, resources, time entries, comments, activity
-            ├── campus_schema.sql            # Campus posts, comments, polls, likes, tags
-            ├── message_schema.sql           # Direct and group messaging tables
-            └── expense_categories_schema.sql
-```
-
----
 
 ## ⚙️ Setup Instructions
 
