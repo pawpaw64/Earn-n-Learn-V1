@@ -9,7 +9,7 @@
 
 **Course:** CSE 3412 — Database Managment System
 
-**Authors:** Tabassum Sumaiya · Md. Hasibul Hossain · Moumita Borna 
+**Authors:** Tabassum Sumaiya · Hasibul Hossain · Moumita Borna 
 
 
 
