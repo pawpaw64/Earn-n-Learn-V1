@@ -9,8 +9,6 @@
 
 **Course:** CSE 3412 — Database Managment System
 
-**Group:** Team LongBLOB 
-
 **Authors:** Tabassum Sumaiya · Md. Hasibul Hossain · Moumita Borna 
 
 
